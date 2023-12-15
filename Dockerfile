@@ -13,8 +13,8 @@ COPY . .
 # Fetch dependencies
 RUN go mod tidy
 
-# Copy the pre-compiled binary from the root directory to the working directory inside the container
-COPY ./masa-node /app/
+# Build the Go app
+RUN go build -v -o masa-node ./cmd/masa-node
 
 # Expose port 4001 (change if necessary)
 EXPOSE 4001

@@ -30,6 +30,11 @@ Before diving in, ensure these prerequisites are installed:
    cd masa-oracle-go-testnet
    ```
 
+   2. Build the node executable:
+   ```bash
+   go build -v -o masa-node ./cmd/masa-node
+   ```
+
 ## Staking Tokens 🔐
 
 To participate in the network and earn rewards, you must first stake your tokens:
