@@ -19,3 +19,7 @@
 
 # Go workspace file
 go.work
+contracts/node_modules
+node_modules
+contracts/truffle-config.js
+masa_oracle_node.log
