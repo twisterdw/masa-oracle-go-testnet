@@ -12,7 +12,7 @@ The Masa Oracle provides infrastructure for accessing, sharing, and rewarding pr
 - [Configuration](#configuration) 🔧
 - [Connecting Nodes](#connecting-nodes) 🔗
 - [Deploying a Node using Fly.io](#deploying-a-node-using-flyio) 🛫
-- [Updates & Additional Information](#updates--additional-information) 📢
+- [Requirements for Running Masa-Node on Fly.io](#requirements-for-running-masa-node-on-flyio) 📋
 
 ## Getting Started 🌟
 
@@ -109,6 +109,24 @@ Check the status of your deployment with `fly status`:
 ```bash
 fly status -a YOUR_APP_NAME
 ```
+
+## Requirements for Running Masa-Node on Fly.io 📋
+
+To run the `masa-node` on Fly.io's free plan, your server should meet the following specifications:
+
+- **Operating System**: Linux-based OS (Ubuntu 20.04 recommended)
+- **Processor**: 4 x Shared CPU
+- **Memory**: 1GB RAM
+- **Storage**: 20GB SSD
+- **Network**: Shared network resources
+
+Please note that these are the specifications provided by Fly.io's free plan. For better performance, especially for production environments, a more powerful server may be necessary.
+
+Before running the `masa-node`, make sure to install the necessary dependencies as outlined in the [Installation](#installation) section.
+
+Also, ensure that the necessary ports are open in your server's firewall settings to allow for incoming and outgoing connections.
+
+Please refer to the [Fly.io documentation](https://fly.io/docs/) for more details on their server specifications and how to configure your application.
 
 ---
 
