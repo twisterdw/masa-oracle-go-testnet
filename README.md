@@ -25,7 +25,7 @@ Before diving in, ensure these prerequisites are installed:
 
 1. Clone the repository:
 ```bash
-[git clone https://github.com/masa-finance/masa-oracle](https://github.com/masa-finance/masa-oracle-go-0.2.3-alpha.git
+[git clone https://github.com/masa-finance/masa-oracle-go-0.2.3-alpha](https://github.com/masa-finance/masa-oracle-go-0.2.3-alpha.git
 cd masa-oracle-go-0.2.3-alpha
 ```
 
