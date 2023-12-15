@@ -1,6 +1,6 @@
 module github.com/masa-finance/masa-oracle
 
-go 1.20
+go 1.21
 
 require (
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.2.0
