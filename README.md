@@ -35,12 +35,14 @@ To run the `masa-node` on Fly.io's free plan, your server should meet the follow
 ### Installation
 
 1. Clone the repository:
+   
    ```bash
    git clone https://github.com/masa-finance/masa-oracle-go-testnet.git
    cd masa-oracle-go-testnet
    ```
 
- 2. Build the node executable:
+ 3. Build the node executable:
+   
    ```bash
    go build -v -o masa-node ./cmd/masa-node
    ```
