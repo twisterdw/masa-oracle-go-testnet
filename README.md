@@ -2,119 +2,6 @@
 
 The Masa Oracle provides infrastructure for accessing, sharing, and rewarding providers of behavioral, personal, and identity data in a decentralized and private way. The Masa Oracle guarantees transparency, security, and equitable compensation for nodes participating in the Masa zk-Data Network & Marketplace.
 
-## Contents
-- [Getting Started](#getting-started) 🌟
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Staking Tokens](#staking-tokens) 🔐
-- [Running the Node](#running-the-node) 🚀
-- [Command-Line Interface (CLI)](#command-line-interface-cli) 💻
-- [Configuration](#configuration) 🔧
-- [Connecting Nodes](#connecting-nodes) 🔗
-- [Deploying a Node using Fly.io](#deploying-a-node-using-flyio) 🛫
-- [Requirements for Running Masa-Node on Fly.io](#requirements-for-running-masa-node-on-flyio) 📋
-
-## Getting Started 🌟
-
-### Prerequisites
-
-Before diving in, ensure these prerequisites are installed:
-- **Go**: Grab it from [Go's official site](https://golang.org/dl/) 📥.
-- **Docker**: Install from [Docker's official docs](https://docs.docker.com/get-docker/) 🐳.
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/masa-finance/masa-oracle-go-testnet.git
-   cd masa-oracle-go-testnet
-   ```
-
-   2. Build the node executable:
-   ```bash
-   go build -v -o masa-node ./cmd/masa-node
-   ```
-
-## Staking Tokens 🔐
-
-To participate in the network and earn rewards, you must first stake your tokens:
-
-1. Obtain Sepolia ETH and Masa tokens for your node's Ethereum address. The address's private key is created when you run the node for the first time using `./masa-node --start` and is saved locally:
-   ```bash
-   cat /Users/{USER}/.masa/masa_oracle_key.ecdsa
-   ```
-
-2. Import the private key into Metamask to access your Ethereum address.
-
-3. Send Sepolia ETH and Masa testnet tokens to your address. Then you can stake!:
-   ```bash
-   ./masa-node --stake 100
-   ```
-
-## Running the Node 🚀
-
-Start your node and join the Masa network with default configurations:
-```bash
-./masa-node --start
-```
-
-## Command-Line Interface (CLI) 💻
-
-Customize your node's behavior with various flags:
-```bash
-./masa-node --bootnodes=node1,node2,node3 --port=8080 --udp=true --tcp=false --start=true
-```
-
-## Configuration 🔧
-
-To use a custom configuration file:
-```bash
-./masa-node --config=path/to/config.json
-```
-
-## Connecting Nodes 🔗
-
-Connect to a specific node in the network:
-```bash
-./masa-node --bootnodes=/ip4/34.133.16.77/udp/4001/quic-v1/p2p/16Uiu2HAmAEDCYv5RrbLhZRmHXGWXNuSFa7YDoC5BGeN3NtDmiZEb --port=4001 --udp=true --tcp=false --start=true
-```
-
-## Deploying a Node using Fly.io 🛫
-
-Deploy a node using Fly.io by setting up your environment and configuring your deployment settings:
-
-### Prerequisites
-
-- Generate a key and stake tokens by running the node locally with `./masa-node --start` and `./masa-node --stake 100` 👆.
-- Install `flyctl`, the Fly.io command-line tool, from the [official Fly.io documentation](https://fly.io/docs/getting-started/installing-flyctl/).
-- Sign up for and log into your Fly.io account.
-
-### Setup
-
-1. Initialize your application with Fly.io using `fly launch` from the `masa-oracle-go-testnet` project directory.
-   ```bash
-   fly launch
-   ```
-
-2. Set the `PRIVATE_KEY` environment variable in your Fly.io application using the private key from your local node setup.
-   ```bash
-   fly secrets set -a YOUR_APP_NAME PRIVATE_KEY="PRIVATE_KEY"
-   ```
-
-### Deployment
-
-Deploy your application using `fly deploy`:
-```bash
-fly deploy
-```
-
-### Checking Deployment Status
-
-Check the status of your deployment with `fly status`:
-```bash
-fly status -a YOUR_APP_NAME
-```
-
 ## Requirements for Running Masa-Node on Fly.io 📋
 
 To run the `masa-node` on Fly.io's free plan, your server should meet the following specifications:
@@ -133,6 +20,107 @@ Also, ensure that the necessary ports are open in your server's firewall setting
 
 Please refer to the [Fly.io documentation](https://fly.io/docs/) for more details on their server specifications and how to configure your application.
 
----
 
-After setting up, your node's address will be displayed, indicating it's ready to connect with other Masa nodes. Follow any additional configuration steps and best practices as per your use case or network
+### Update packages
+
+    apt update
+    apt upgrade
+  
+### Install GO
+  
+    cd $HOME
+    ! [ -x "$(command -v go)" ] && {
+    VER="1.20.3"
+    wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
+    sudo rm -rf /usr/local/go
+    sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
+    rm "go$VER.linux-amd64.tar.gz"
+    [ ! -f ~/.bash_profile ] && touch ~/.bash_profile
+    echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
+    source $HOME/.bash_profile
+    }
+    [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/masa-finance/masa-oracle-go-testnet.git
+   cd masa-oracle-go-testnet
+   ```
+
+   2. Build the node executable:
+   ```bash
+   go build -v -o masa-node ./cmd/masa-node
+   ```
+
+## Staking Tokens 🔐
+
+To participate in the network and earn rewards, you must first stake your tokens:
+
+1. Start your node to get Private Key
+   ```bash
+   ./masa-node --start
+   ```
+   
+2. Get your private key from the node
+   ```bash
+   cat /root/.masa/masa_oracle_key.ecdsa
+   ```
+
+3. Import the private key into Metamask to access your Ethereum address.
+
+4. Send Sepolia ETH and Masa testnet tokens to your address. Then stake!:
+   ```bash
+   ./masa-node --stake 100
+   ```
+
+## Running the Node 🚀
+
+Start your node and join the Masa network with default configurations:
+```bash
+./masa-node --start
+```
+
+## Deploying a Node using Fly.io 🛫
+
+Deploy a node using Fly.io by setting up your environment and configuring your deployment settings:
+
+### Fly.io istallation
+
+1. Istall Fly.io
+   
+   ```bash
+   curl -L https://fly.io/install.sh | sh
+   ```
+
+2. Move Fly.io Foldet
+
+   ```bash
+   mv /root/.fly /root/masa-oracle-go-testnet/  
+   ```
+### Register you account on https://fly.io/dashboard
+
+### Setup
+
+1. link your node to the FLY platform
+
+    ```bash
+    .fly/bin/flyctl auth login 
+    ```
+  
+2. Run your application with Fly.io from the `masa-oracle-go-testnet` project directory.
+   ```bash
+   .fly/bin/flyctl launch
+   ```
+
+3. Visit your Fly.io profile ,go to your application in the dashboard and in the secrets section specify your node name and private key
+
+### Checking Deployment Status
+
+Check the status of your deployment`:
+
+```bash
+.fly/bin/flyctl status -a testmasa
+```
+
