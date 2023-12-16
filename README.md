@@ -101,6 +101,8 @@ Deploy a node using Fly.io by setting up your environment and configuring your d
     ```bash
     .fly/bin/flyctl auth login 
     ```
+    
+copy the link from terminal and paste it on your browser to connect
   
 2. Run your application with Fly.io from the `masa-oracle-go-testnet` project directory.
    ```bash
