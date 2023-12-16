@@ -109,6 +109,8 @@ Deploy a node using Fly.io by setting up your environment and configuring your d
 
 3. Visit your Fly.io profile ,go to your application in the dashboard and in the secrets section specify your node name and private key
 
+4. You can also monitor the status of your node from the monitoring directory
+
 ### Checking Deployment Status
 
 Check the status of your deployment`:
