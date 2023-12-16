@@ -74,6 +74,28 @@ Start your node and join the Masa network with default configurations:
 ```bash
 ./masa-node --start
 ```
+## Command-Line Interface (CLI) 💻
+
+Customize your node's behavior with various flags:
+
+```bash
+./masa-node --bootnodes=node1,node2,node3 --port=8080 --udp=true --tcp=false --start=true
+```
+
+## Configuration 🔧
+
+To use a custom configuration file:
+
+```bash
+./masa-node --config=path/to/config.json
+```
+
+Connecting Nodes 🔗
+Connect to a specific node in the network:
+
+```bash
+./masa-node --bootnodes=/ip4/34.133.16.77/udp/4001/quic-v1/p2p/16Uiu2HAmAEDCYv5RrbLhZRmHXGWXNuSFa7YDoC5BGeN3NtDmiZEb --port=4001 --udp=true --tcp=false --start=true
+```
 
 ## Deploying a Node using Fly.io 🛫
 
