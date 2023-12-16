@@ -40,7 +40,7 @@ To run the `masa-node` on Fly.io's free plan, your server should meet the follow
    cd masa-oracle-go-testnet
    ```
 
-   2. Build the node executable:
+ 2. Build the node executable:
    ```bash
    go build -v -o masa-node ./cmd/masa-node
    ```
