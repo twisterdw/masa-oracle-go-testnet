@@ -114,7 +114,7 @@ Deploy a node using Fly.io by setting up your environment and configuring your d
 
 ### Checking Deployment Status
 
-Check the status of your deployment`:
+1. Check the status of your deployment`:
 
 ```bash
 .fly/bin/flyctl status -a testmasa
