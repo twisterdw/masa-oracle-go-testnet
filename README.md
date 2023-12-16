@@ -12,15 +12,6 @@ To run the `masa-node` on Fly.io's free plan, your server should meet the follow
 - **Storage**: 20GB SSD
 - **Network**: Shared network resources
 
-Please note that these are the specifications provided by Fly.io's free plan. For better performance, especially for production environments, a more powerful server may be necessary.
-
-Before running the `masa-node`, make sure to install the necessary dependencies as outlined in the [Installation](#installation) section.
-
-Also, ensure that the necessary ports are open in your server's firewall settings to allow for incoming and outgoing connections.
-
-Please refer to the [Fly.io documentation](https://fly.io/docs/) for more details on their server specifications and how to configure your application.
-
-
 ### Update packages
 
     apt update
